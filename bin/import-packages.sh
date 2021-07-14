@@ -14,13 +14,10 @@ mkdir -p "$basedir/import"
 cd "$basedir/import"
 
 if [ ! -d "$basedir/import/i2p.i2p" ]; then
-  git clone https://github.com/i2p/i2p.i2p.git
+  git clone https://github.com/i2p/i2p.i2p.git --depth 1 --branch i2p-0.9.48
 fi
 
-cd "$basedir/import/i2p.i2p"
-git fetch
-git checkout tags/i2p-0.9.48
-cd ..
+cd "$basedir/import"
 
 if [ ! -d "$basedir/import/jdks" ]; then
   mkdir -p jdks
